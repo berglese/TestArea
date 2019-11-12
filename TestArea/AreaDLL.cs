@@ -8,14 +8,14 @@ namespace TestArea
 {
     public class AreaDLL
     {
-        public static double Circle(double radius)
+        public double Circle(double radius)
         {
             //Площадь круга
-            double area = Math.PI * Math.Pow(radius, 2);
+            double area = Math.Round(Math.PI * Math.Pow(radius, 2), 2);
             return area;
         }
 
-        public static Tuple<double, bool> Triangle (double a, double b, double c)
+        public Tuple<double, bool> Triangle (double a, double b, double c)
         {
             //Проверка на прямоугольный треугольник
             Boolean isRight = false;
@@ -25,7 +25,7 @@ namespace TestArea
                 isRight = true;
             //Вычисление площади треугольника
             double p = (a + b + c) / 2;
-            double area = Math.Sqrt(p*(p-a)*(p-b)*(p-c));
+            double area = Math.Round(Math.Sqrt(p*(p-a)*(p-b)*(p-c)), 2);
             //Возвращается площадь и результат проверки на прямоугольность
             return Tuple.Create(area, isRight);
         }
